@@ -8,14 +8,17 @@ export const metadata = {
   description: 'A next.js project that is being used as a learning sandbox',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
+export default function RootLayout(props: {
+  children: React.ReactNode;
+  analytics: React.ReactNode;
+  team: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}><>{children}</></body>
+      <body className={inter.className}><>
+        {props.children}
+        {props.team}
+        {props.analytics}</></body>
     </html>
   )
 }
